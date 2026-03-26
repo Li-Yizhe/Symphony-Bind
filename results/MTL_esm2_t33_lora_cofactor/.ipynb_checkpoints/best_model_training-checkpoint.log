@@ -1,0 +1,1279 @@
+2026-01-03 02:28:09 - training - INFO - Starting training with configuration:
+2026-01-03 02:28:09 - training - INFO - hidden_size: None
+2026-01-03 02:28:09 - training - INFO - num_attention_head: 8
+2026-01-03 02:28:09 - training - INFO - attention_probs_dropout: 0.1
+2026-01-03 02:28:09 - training - INFO - plm_model: ./models/esm2/esm2_t33_650M_UR50D
+2026-01-03 02:28:09 - training - INFO - pooling_method: convbert
+2026-01-03 02:28:09 - training - INFO - pooling_dropout: 0.1
+2026-01-03 02:28:09 - training - INFO - mlp_hidden_dims: [512, 256]
+2026-01-03 02:28:09 - training - INFO - mlp_activation: relu
+2026-01-03 02:28:09 - training - INFO - lstm_hidden_size: 256
+2026-01-03 02:28:09 - training - INFO - lstm_num_layers: 2
+2026-01-03 02:28:09 - training - INFO - lstm_bidirectional: True
+2026-01-03 02:28:09 - training - INFO - bilstm_pooling: mean
+2026-01-03 02:28:09 - training - INFO - num_cnn_layers: 3
+2026-01-03 02:28:09 - training - INFO - kernel_size: 7
+2026-01-03 02:28:09 - training - INFO - nhead: 8
+2026-01-03 02:28:09 - training - INFO - hidden_dim: 512
+2026-01-03 02:28:09 - training - INFO - feature_extractor_path: None
+2026-01-03 02:28:09 - training - INFO - plm_encoder_path: None
+2026-01-03 02:28:09 - training - INFO - num_hidden_layers: 1
+2026-01-03 02:28:09 - training - INFO - dataset: None
+2026-01-03 02:28:09 - training - INFO - dataset_config: None
+2026-01-03 02:28:09 - training - INFO - num_labels: 2
+2026-01-03 02:28:09 - training - INFO - problem_type: single_label_classification
+2026-01-03 02:28:09 - training - INFO - pdb_type: None
+2026-01-03 02:28:09 - training - INFO - train_file: None
+2026-01-03 02:28:09 - training - INFO - valid_file: None
+2026-01-03 02:28:09 - training - INFO - test_file: None
+2026-01-03 02:28:09 - training - INFO - metrics: ['mcc', 'auroc', 'aupr']
+2026-01-03 02:28:09 - training - INFO - data_group_dir: ./dataset/data_group
+2026-01-03 02:28:09 - training - INFO - task_names: None
+2026-01-03 02:28:09 - training - INFO - mtl_group: cofactor
+2026-01-03 02:28:09 - training - INFO - seed: 42
+2026-01-03 02:28:09 - training - INFO - learning_rate: 0.00015
+2026-01-03 02:28:09 - training - INFO - scheduler: None
+2026-01-03 02:28:09 - training - INFO - warmup_steps: 400
+2026-01-03 02:28:09 - training - INFO - num_workers: 4
+2026-01-03 02:28:09 - training - INFO - batch_size: 8
+2026-01-03 02:28:09 - training - INFO - batch_token: None
+2026-01-03 02:28:09 - training - INFO - num_epochs: 100
+2026-01-03 02:28:09 - training - INFO - max_seq_len: 512
+2026-01-03 02:28:09 - training - INFO - gradient_accumulation_steps: 4
+2026-01-03 02:28:09 - training - INFO - max_grad_norm: 1.0
+2026-01-03 02:28:09 - training - INFO - patience: 8
+2026-01-03 02:28:09 - training - INFO - min_delta: 0.001
+2026-01-03 02:28:09 - training - INFO - min_epochs: 5
+2026-01-03 02:28:09 - training - INFO - monitor: aupr
+2026-01-03 02:28:09 - training - INFO - monitor_strategy: max
+2026-01-03 02:28:09 - training - INFO - loss_type: combined
+2026-01-03 02:28:09 - training - INFO - training_method: mtl-lora
+2026-01-03 02:28:09 - training - INFO - test_only: False
+2026-01-03 02:28:09 - training - INFO - output_model_name: best_model.pt
+2026-01-03 02:28:09 - training - INFO - output_root: ckpt
+2026-01-03 02:28:09 - training - INFO - output_dir: ./results/MTL_esm2_t33_lora_cofactor
+2026-01-03 02:28:09 - training - INFO - wandb: False
+2026-01-03 02:28:09 - training - INFO - wandb_entity: None
+2026-01-03 02:28:09 - training - INFO - wandb_project: VenusFactory
+2026-01-03 02:28:09 - training - INFO - wandb_run_name: None
+2026-01-03 02:28:09 - training - INFO - Random seed set to: 42
+2026-01-03 02:28:09 - training - INFO - ============================================================
+2026-01-03 02:28:09 - training - INFO - Initializing models and tokenizer...
+2026-01-03 02:28:16 - training - INFO - ------------------------
+2026-01-03 02:28:16 - training - INFO - Model Parameters Statistics:
+2026-01-03 02:28:16 - training - INFO - ------------------------
+2026-01-03 02:28:16 - training - INFO - Adapter Model:
+2026-01-03 02:28:16 - training - INFO -   Total parameters:     7.10M
+2026-01-03 02:28:16 - training - INFO -   Trainable parameters: 7.10M
+2026-01-03 02:28:16 - training - INFO - Pre-trained Model:
+2026-01-03 02:28:16 - training - INFO -   Total parameters:     656.80M
+2026-01-03 02:28:16 - training - INFO -   Trainable parameters: 6.08M
+2026-01-03 02:28:16 - training - INFO - Combined:
+2026-01-03 02:28:16 - training - INFO -   Total parameters:     663.89M
+2026-01-03 02:28:16 - training - INFO -   Trainable parameters: 13.18M
+2026-01-03 02:28:16 - training - INFO -   Trainable percentage: 1.99%
+2026-01-03 02:28:16 - training - INFO - ------------------------
+2026-01-03 02:28:16 - training - INFO - ============================================================
+2026-01-03 03:47:52 - training - INFO - Starting training with configuration:
+2026-01-03 03:47:52 - training - INFO - hidden_size: None
+2026-01-03 03:47:52 - training - INFO - num_attention_head: 8
+2026-01-03 03:47:52 - training - INFO - attention_probs_dropout: 0.1
+2026-01-03 03:47:52 - training - INFO - plm_model: ./models/esm2/esm2_t33_650M_UR50D
+2026-01-03 03:47:52 - training - INFO - pooling_method: convbert
+2026-01-03 03:47:52 - training - INFO - pooling_dropout: 0.1
+2026-01-03 03:47:52 - training - INFO - mlp_hidden_dims: [512, 256]
+2026-01-03 03:47:52 - training - INFO - mlp_activation: relu
+2026-01-03 03:47:52 - training - INFO - lstm_hidden_size: 256
+2026-01-03 03:47:52 - training - INFO - lstm_num_layers: 2
+2026-01-03 03:47:52 - training - INFO - lstm_bidirectional: True
+2026-01-03 03:47:52 - training - INFO - bilstm_pooling: mean
+2026-01-03 03:47:52 - training - INFO - num_cnn_layers: 3
+2026-01-03 03:47:52 - training - INFO - kernel_size: 7
+2026-01-03 03:47:52 - training - INFO - nhead: 8
+2026-01-03 03:47:52 - training - INFO - hidden_dim: 512
+2026-01-03 03:47:52 - training - INFO - feature_extractor_path: None
+2026-01-03 03:47:52 - training - INFO - plm_encoder_path: None
+2026-01-03 03:47:52 - training - INFO - num_hidden_layers: 1
+2026-01-03 03:47:52 - training - INFO - dataset: None
+2026-01-03 03:47:52 - training - INFO - dataset_config: None
+2026-01-03 03:47:52 - training - INFO - num_labels: 2
+2026-01-03 03:47:52 - training - INFO - problem_type: single_label_classification
+2026-01-03 03:47:52 - training - INFO - pdb_type: None
+2026-01-03 03:47:52 - training - INFO - train_file: None
+2026-01-03 03:47:52 - training - INFO - valid_file: None
+2026-01-03 03:47:52 - training - INFO - test_file: None
+2026-01-03 03:47:52 - training - INFO - metrics: ['mcc', 'auroc', 'aupr']
+2026-01-03 03:47:52 - training - INFO - data_group_dir: ./dataset/data_group
+2026-01-03 03:47:52 - training - INFO - task_names: None
+2026-01-03 03:47:52 - training - INFO - mtl_group: cofactor
+2026-01-03 03:47:52 - training - INFO - seed: 42
+2026-01-03 03:47:52 - training - INFO - learning_rate: 0.00015
+2026-01-03 03:47:52 - training - INFO - scheduler: None
+2026-01-03 03:47:52 - training - INFO - warmup_steps: 400
+2026-01-03 03:47:52 - training - INFO - num_workers: 4
+2026-01-03 03:47:52 - training - INFO - batch_size: 8
+2026-01-03 03:47:52 - training - INFO - batch_token: None
+2026-01-03 03:47:52 - training - INFO - num_epochs: 100
+2026-01-03 03:47:52 - training - INFO - max_seq_len: 512
+2026-01-03 03:47:52 - training - INFO - gradient_accumulation_steps: 4
+2026-01-03 03:47:52 - training - INFO - max_grad_norm: 1.0
+2026-01-03 03:47:52 - training - INFO - patience: 8
+2026-01-03 03:47:52 - training - INFO - min_delta: 0.001
+2026-01-03 03:47:52 - training - INFO - min_epochs: 5
+2026-01-03 03:47:52 - training - INFO - monitor: aupr
+2026-01-03 03:47:52 - training - INFO - monitor_strategy: max
+2026-01-03 03:47:52 - training - INFO - loss_type: combined
+2026-01-03 03:47:52 - training - INFO - training_method: mtl-lora
+2026-01-03 03:47:52 - training - INFO - test_only: False
+2026-01-03 03:47:52 - training - INFO - output_model_name: best_model.pt
+2026-01-03 03:47:52 - training - INFO - output_root: ckpt
+2026-01-03 03:47:52 - training - INFO - output_dir: ./results/MTL_esm2_t33_lora_cofactor
+2026-01-03 03:47:52 - training - INFO - wandb: False
+2026-01-03 03:47:52 - training - INFO - wandb_entity: None
+2026-01-03 03:47:52 - training - INFO - wandb_project: VenusFactory
+2026-01-03 03:47:52 - training - INFO - wandb_run_name: None
+2026-01-03 03:47:52 - training - INFO - Random seed set to: 42
+2026-01-03 03:47:52 - training - INFO - ============================================================
+2026-01-03 03:47:52 - training - INFO - Initializing models and tokenizer...
+2026-01-03 03:47:59 - training - INFO - ------------------------
+2026-01-03 03:47:59 - training - INFO - Model Parameters Statistics:
+2026-01-03 03:47:59 - training - INFO - ------------------------
+2026-01-03 03:47:59 - training - INFO - Adapter Model:
+2026-01-03 03:47:59 - training - INFO -   Total parameters:     7.10M
+2026-01-03 03:47:59 - training - INFO -   Trainable parameters: 7.10M
+2026-01-03 03:47:59 - training - INFO - Pre-trained Model:
+2026-01-03 03:47:59 - training - INFO -   Total parameters:     656.80M
+2026-01-03 03:47:59 - training - INFO -   Trainable parameters: 6.08M
+2026-01-03 03:47:59 - training - INFO - Combined:
+2026-01-03 03:47:59 - training - INFO -   Total parameters:     663.89M
+2026-01-03 03:47:59 - training - INFO -   Trainable parameters: 13.18M
+2026-01-03 03:47:59 - training - INFO -   Trainable percentage: 1.99%
+2026-01-03 03:47:59 - training - INFO - ------------------------
+2026-01-03 03:47:59 - training - INFO - ============================================================
+2026-01-03 03:47:59 - training - INFO - Training MTL model for group: cofactor
+2026-01-03 03:47:59 - training - INFO - MTL Groups and Tasks:
+2026-01-03 03:47:59 - training - INFO -   Group cofactor: ['FAD', 'NAD', 'SAH', 'SF4']
+2026-01-03 03:47:59 - training - INFO -   Task FAD (Group cofactor): 153 train, 33 val, 61 test
+2026-01-03 03:47:59 - training - INFO -   Task NAD (Group cofactor): 124 train, 34 val, 45 test
+2026-01-03 03:47:59 - training - INFO -   Task SAH (Group cofactor): 134 train, 35 val, 49 test
+2026-01-03 03:47:59 - training - INFO -   Task SF4 (Group cofactor): 106 train, 28 val, 48 test
+2026-01-03 03:47:59 - training - INFO - MTL Dataset Summary:
+2026-01-03 03:47:59 - training - INFO -   Total train samples: 517
+2026-01-03 03:47:59 - training - INFO -   Total val samples: 130
+2026-01-03 03:47:59 - training - INFO -   Total test samples: 203
+2026-01-03 03:47:59 - training - INFO - ============================================================
+2026-01-03 03:47:59 - training - INFO - Starting Training Phase
+2026-01-03 03:47:59 - training - INFO - ============================================================
+2026-01-03 03:47:59 - training - INFO - ---------- Epoch 0 ----------
+2026-01-03 03:48:38 - training - INFO - Epoch 0 Train Loss: 0.6232
+2026-01-03 03:48:42 - training - INFO - Validation losses per group:
+2026-01-03 03:48:42 - training - INFO -   Group cofactor: 0.3582 (samples: 130)
+2026-01-03 03:48:42 - training - INFO -     - FAD: 0.4862 (samples: 33)
+2026-01-03 03:48:42 - training - INFO -     - NAD: 0.3549 (samples: 34)
+2026-01-03 03:48:42 - training - INFO -     - SAH: 0.2487 (samples: 35)
+2026-01-03 03:48:42 - training - INFO -     - SF4: 0.3481 (samples: 28)
+2026-01-03 03:48:47 - training - INFO - Per-group validation metrics:
+2026-01-03 03:48:47 - training - INFO -   Group cofactor:
+2026-01-03 03:48:47 - training - INFO -     - FAD: mcc: 0.3786, auroc: 0.8857, aupr: 0.3690
+2026-01-03 03:48:47 - training - INFO -     - NAD: mcc: 0.3369, auroc: 0.8832, aupr: 0.3061
+2026-01-03 03:48:47 - training - INFO -     - SAH: mcc: 0.3379, auroc: 0.8583, aupr: 0.3103
+2026-01-03 03:48:47 - training - INFO -     - SF4: mcc: 0.3679, auroc: 0.9022, aupr: 0.3482
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val Loss: 0.3582
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val FAD_mcc: 0.3786
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val FAD_auroc: 0.8857
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val FAD_aupr: 0.3690
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val NAD_mcc: 0.3369
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val NAD_auroc: 0.8832
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val NAD_aupr: 0.3061
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val SAH_mcc: 0.3379
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val SAH_auroc: 0.8583
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val SAH_aupr: 0.3103
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val SF4_mcc: 0.3679
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val SF4_auroc: 0.9022
+2026-01-03 03:48:47 - training - INFO - Epoch 0 Val SF4_aupr: 0.3482
+2026-01-03 03:48:47 - training - INFO - Saving model with best val aupr: 0.3334
+2026-01-03 03:48:47 - training - INFO - ---------- Epoch 1 ----------
+2026-01-03 03:49:26 - training - INFO - Epoch 1 Train Loss: 0.2808
+2026-01-03 03:49:30 - training - INFO - Validation losses per group:
+2026-01-03 03:49:30 - training - INFO -   Group cofactor: 0.2792 (samples: 130)
+2026-01-03 03:49:30 - training - INFO -     - FAD: 0.2899 (samples: 33)
+2026-01-03 03:49:30 - training - INFO -     - NAD: 0.2522 (samples: 34)
+2026-01-03 03:49:30 - training - INFO -     - SAH: 0.1800 (samples: 35)
+2026-01-03 03:49:30 - training - INFO -     - SF4: 0.4235 (samples: 28)
+2026-01-03 03:49:35 - training - INFO - Per-group validation metrics:
+2026-01-03 03:49:35 - training - INFO -   Group cofactor:
+2026-01-03 03:49:35 - training - INFO -     - FAD: mcc: 0.4542, auroc: 0.9051, aupr: 0.4548
+2026-01-03 03:49:35 - training - INFO -     - NAD: mcc: 0.4622, auroc: 0.9317, aupr: 0.4691
+2026-01-03 03:49:35 - training - INFO -     - SAH: mcc: 0.4716, auroc: 0.9223, aupr: 0.4866
+2026-01-03 03:49:35 - training - INFO -     - SF4: mcc: 0.3363, auroc: 0.9050, aupr: 0.4073
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val Loss: 0.2792
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val FAD_mcc: 0.4542
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val FAD_auroc: 0.9051
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val FAD_aupr: 0.4548
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val NAD_mcc: 0.4622
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val NAD_auroc: 0.9317
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val NAD_aupr: 0.4691
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val SAH_mcc: 0.4716
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val SAH_auroc: 0.9223
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val SAH_aupr: 0.4866
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val SF4_mcc: 0.3363
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val SF4_auroc: 0.9050
+2026-01-03 03:49:35 - training - INFO - Epoch 1 Val SF4_aupr: 0.4073
+2026-01-03 03:49:35 - training - INFO - Saving model with best val aupr: 0.4544
+2026-01-03 03:49:35 - training - INFO - ---------- Epoch 2 ----------
+2026-01-03 03:50:14 - training - INFO - Epoch 2 Train Loss: 0.2023
+2026-01-03 03:50:18 - training - INFO - Validation losses per group:
+2026-01-03 03:50:18 - training - INFO -   Group cofactor: 0.2056 (samples: 130)
+2026-01-03 03:50:18 - training - INFO -     - FAD: 0.2100 (samples: 33)
+2026-01-03 03:50:18 - training - INFO -     - NAD: 0.1779 (samples: 34)
+2026-01-03 03:50:18 - training - INFO -     - SAH: 0.2057 (samples: 35)
+2026-01-03 03:50:18 - training - INFO -     - SF4: 0.2340 (samples: 28)
+2026-01-03 03:50:22 - training - INFO - Per-group validation metrics:
+2026-01-03 03:50:22 - training - INFO -   Group cofactor:
+2026-01-03 03:50:22 - training - INFO -     - FAD: mcc: 0.4885, auroc: 0.9294, aupr: 0.5351
+2026-01-03 03:50:22 - training - INFO -     - NAD: mcc: 0.5481, auroc: 0.9534, aupr: 0.5641
+2026-01-03 03:50:22 - training - INFO -     - SAH: mcc: 0.5922, auroc: 0.9533, aupr: 0.6080
+2026-01-03 03:50:22 - training - INFO -     - SF4: mcc: 0.4959, auroc: 0.9394, aupr: 0.5073
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val Loss: 0.2056
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val FAD_mcc: 0.4885
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val FAD_auroc: 0.9294
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val FAD_aupr: 0.5351
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val NAD_mcc: 0.5481
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val NAD_auroc: 0.9534
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val NAD_aupr: 0.5641
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val SAH_mcc: 0.5922
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val SAH_auroc: 0.9533
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val SAH_aupr: 0.6080
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val SF4_mcc: 0.4959
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val SF4_auroc: 0.9394
+2026-01-03 03:50:22 - training - INFO - Epoch 2 Val SF4_aupr: 0.5073
+2026-01-03 03:50:22 - training - INFO - Saving model with best val aupr: 0.5536
+2026-01-03 03:50:22 - training - INFO - ---------- Epoch 3 ----------
+2026-01-03 03:51:02 - training - INFO - Epoch 3 Train Loss: 0.1593
+2026-01-03 03:51:06 - training - INFO - Validation losses per group:
+2026-01-03 03:51:06 - training - INFO -   Group cofactor: 0.1714 (samples: 130)
+2026-01-03 03:51:06 - training - INFO -     - FAD: 0.1849 (samples: 33)
+2026-01-03 03:51:06 - training - INFO -     - NAD: 0.1538 (samples: 34)
+2026-01-03 03:51:06 - training - INFO -     - SAH: 0.1313 (samples: 35)
+2026-01-03 03:51:06 - training - INFO -     - SF4: 0.2272 (samples: 28)
+2026-01-03 03:51:10 - training - INFO - Per-group validation metrics:
+2026-01-03 03:51:10 - training - INFO -   Group cofactor:
+2026-01-03 03:51:10 - training - INFO -     - FAD: mcc: 0.5193, auroc: 0.9488, aupr: 0.6162
+2026-01-03 03:51:10 - training - INFO -     - NAD: mcc: 0.5561, auroc: 0.9677, aupr: 0.6491
+2026-01-03 03:51:10 - training - INFO -     - SAH: mcc: 0.5513, auroc: 0.9602, aupr: 0.6651
+2026-01-03 03:51:10 - training - INFO -     - SF4: mcc: 0.5580, auroc: 0.9536, aupr: 0.6158
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val Loss: 0.1714
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val FAD_mcc: 0.5193
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val FAD_auroc: 0.9488
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val FAD_aupr: 0.6162
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val NAD_mcc: 0.5561
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val NAD_auroc: 0.9677
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val NAD_aupr: 0.6491
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val SAH_mcc: 0.5513
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val SAH_auroc: 0.9602
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val SAH_aupr: 0.6651
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val SF4_mcc: 0.5580
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val SF4_auroc: 0.9536
+2026-01-03 03:51:10 - training - INFO - Epoch 3 Val SF4_aupr: 0.6158
+2026-01-03 03:51:10 - training - INFO - Saving model with best val aupr: 0.6366
+2026-01-03 03:51:10 - training - INFO - ---------- Epoch 4 ----------
+2026-01-03 03:51:50 - training - INFO - Epoch 4 Train Loss: 0.1223
+2026-01-03 03:51:54 - training - INFO - Validation losses per group:
+2026-01-03 03:51:54 - training - INFO -   Group cofactor: 0.1653 (samples: 130)
+2026-01-03 03:51:54 - training - INFO -     - FAD: 0.1670 (samples: 33)
+2026-01-03 03:51:54 - training - INFO -     - NAD: 0.1417 (samples: 34)
+2026-01-03 03:51:54 - training - INFO -     - SAH: 0.1490 (samples: 35)
+2026-01-03 03:51:54 - training - INFO -     - SF4: 0.2122 (samples: 28)
+2026-01-03 03:51:58 - training - INFO - Per-group validation metrics:
+2026-01-03 03:51:58 - training - INFO -   Group cofactor:
+2026-01-03 03:51:58 - training - INFO -     - FAD: mcc: 0.5570, auroc: 0.9585, aupr: 0.6681
+2026-01-03 03:51:58 - training - INFO -     - NAD: mcc: 0.5715, auroc: 0.9676, aupr: 0.6508
+2026-01-03 03:51:58 - training - INFO -     - SAH: mcc: 0.6365, auroc: 0.9640, aupr: 0.7005
+2026-01-03 03:51:58 - training - INFO -     - SF4: mcc: 0.5836, auroc: 0.9608, aupr: 0.6422
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val Loss: 0.1653
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val FAD_mcc: 0.5570
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val FAD_auroc: 0.9585
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val FAD_aupr: 0.6681
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val NAD_mcc: 0.5715
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val NAD_auroc: 0.9676
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val NAD_aupr: 0.6508
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val SAH_mcc: 0.6365
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val SAH_auroc: 0.9640
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val SAH_aupr: 0.7005
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val SF4_mcc: 0.5836
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val SF4_auroc: 0.9608
+2026-01-03 03:51:58 - training - INFO - Epoch 4 Val SF4_aupr: 0.6422
+2026-01-03 03:51:58 - training - INFO - Saving model with best val aupr: 0.6654
+2026-01-03 03:51:58 - training - INFO - ---------- Epoch 5 ----------
+2026-01-03 03:52:37 - training - INFO - Epoch 5 Train Loss: 0.1007
+2026-01-03 03:52:41 - training - INFO - Validation losses per group:
+2026-01-03 03:52:41 - training - INFO -   Group cofactor: 0.1567 (samples: 130)
+2026-01-03 03:52:41 - training - INFO -     - FAD: 0.1638 (samples: 33)
+2026-01-03 03:52:41 - training - INFO -     - NAD: 0.1342 (samples: 34)
+2026-01-03 03:52:41 - training - INFO -     - SAH: 0.1207 (samples: 35)
+2026-01-03 03:52:41 - training - INFO -     - SF4: 0.2203 (samples: 28)
+2026-01-03 03:52:46 - training - INFO - Per-group validation metrics:
+2026-01-03 03:52:46 - training - INFO -   Group cofactor:
+2026-01-03 03:52:46 - training - INFO -     - FAD: mcc: 0.5878, auroc: 0.9605, aupr: 0.6873
+2026-01-03 03:52:46 - training - INFO -     - NAD: mcc: 0.6037, auroc: 0.9739, aupr: 0.6930
+2026-01-03 03:52:46 - training - INFO -     - SAH: mcc: 0.6000, auroc: 0.9676, aupr: 0.7177
+2026-01-03 03:52:46 - training - INFO -     - SF4: mcc: 0.5086, auroc: 0.9470, aupr: 0.5851
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val Loss: 0.1567
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val FAD_mcc: 0.5878
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val FAD_auroc: 0.9605
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val FAD_aupr: 0.6873
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val NAD_mcc: 0.6037
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val NAD_auroc: 0.9739
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val NAD_aupr: 0.6930
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val SAH_mcc: 0.6000
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val SAH_auroc: 0.9676
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val SAH_aupr: 0.7177
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val SF4_mcc: 0.5086
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val SF4_auroc: 0.9470
+2026-01-03 03:52:46 - training - INFO - Epoch 5 Val SF4_aupr: 0.5851
+2026-01-03 03:52:46 - training - INFO - Saving model with best val aupr: 0.6708
+2026-01-03 03:52:46 - training - INFO - ---------- Epoch 6 ----------
+2026-01-03 03:53:24 - training - INFO - Epoch 6 Train Loss: 0.0818
+2026-01-03 03:53:28 - training - INFO - Validation losses per group:
+2026-01-03 03:53:28 - training - INFO -   Group cofactor: 0.1612 (samples: 130)
+2026-01-03 03:53:28 - training - INFO -     - FAD: 0.1861 (samples: 33)
+2026-01-03 03:53:28 - training - INFO -     - NAD: 0.1320 (samples: 34)
+2026-01-03 03:53:28 - training - INFO -     - SAH: 0.1238 (samples: 35)
+2026-01-03 03:53:28 - training - INFO -     - SF4: 0.2142 (samples: 28)
+2026-01-03 03:53:33 - training - INFO - Per-group validation metrics:
+2026-01-03 03:53:33 - training - INFO -   Group cofactor:
+2026-01-03 03:53:33 - training - INFO -     - FAD: mcc: 0.6244, auroc: 0.9634, aupr: 0.7082
+2026-01-03 03:53:33 - training - INFO -     - NAD: mcc: 0.6448, auroc: 0.9757, aupr: 0.7143
+2026-01-03 03:53:33 - training - INFO -     - SAH: mcc: 0.6186, auroc: 0.9696, aupr: 0.7382
+2026-01-03 03:53:33 - training - INFO -     - SF4: mcc: 0.5618, auroc: 0.9632, aupr: 0.6819
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val Loss: 0.1612
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val FAD_mcc: 0.6244
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val FAD_auroc: 0.9634
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val FAD_aupr: 0.7082
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val NAD_mcc: 0.6448
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val NAD_auroc: 0.9757
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val NAD_aupr: 0.7143
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val SAH_mcc: 0.6186
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val SAH_auroc: 0.9696
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val SAH_aupr: 0.7382
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val SF4_mcc: 0.5618
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val SF4_auroc: 0.9632
+2026-01-03 03:53:33 - training - INFO - Epoch 6 Val SF4_aupr: 0.6819
+2026-01-03 03:53:33 - training - INFO - Saving model with best val aupr: 0.7107
+2026-01-03 03:53:33 - training - INFO - ---------- Epoch 7 ----------
+2026-01-03 03:54:12 - training - INFO - Epoch 7 Train Loss: 0.0634
+2026-01-03 03:54:16 - training - INFO - Validation losses per group:
+2026-01-03 03:54:16 - training - INFO -   Group cofactor: 0.1681 (samples: 130)
+2026-01-03 03:54:16 - training - INFO -     - FAD: 0.1747 (samples: 33)
+2026-01-03 03:54:16 - training - INFO -     - NAD: 0.1356 (samples: 34)
+2026-01-03 03:54:16 - training - INFO -     - SAH: 0.1434 (samples: 35)
+2026-01-03 03:54:16 - training - INFO -     - SF4: 0.2308 (samples: 28)
+2026-01-03 03:54:20 - training - INFO - Per-group validation metrics:
+2026-01-03 03:54:20 - training - INFO -   Group cofactor:
+2026-01-03 03:54:20 - training - INFO -     - FAD: mcc: 0.6310, auroc: 0.9647, aupr: 0.7155
+2026-01-03 03:54:20 - training - INFO -     - NAD: mcc: 0.6555, auroc: 0.9759, aupr: 0.7253
+2026-01-03 03:54:20 - training - INFO -     - SAH: mcc: 0.6599, auroc: 0.9680, aupr: 0.7394
+2026-01-03 03:54:20 - training - INFO -     - SF4: mcc: 0.5992, auroc: 0.9635, aupr: 0.6863
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val Loss: 0.1681
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val FAD_mcc: 0.6310
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val FAD_auroc: 0.9647
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val FAD_aupr: 0.7155
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val NAD_mcc: 0.6555
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val NAD_auroc: 0.9759
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val NAD_aupr: 0.7253
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val SAH_mcc: 0.6599
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val SAH_auroc: 0.9680
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val SAH_aupr: 0.7394
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val SF4_mcc: 0.5992
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val SF4_auroc: 0.9635
+2026-01-03 03:54:20 - training - INFO - Epoch 7 Val SF4_aupr: 0.6863
+2026-01-03 03:54:20 - training - INFO - Saving model with best val aupr: 0.7166
+2026-01-03 03:54:20 - training - INFO - ---------- Epoch 8 ----------
+2026-01-03 03:54:59 - training - INFO - Epoch 8 Train Loss: 0.0500
+2026-01-03 03:55:04 - training - INFO - Validation losses per group:
+2026-01-03 03:55:04 - training - INFO -   Group cofactor: 0.1834 (samples: 130)
+2026-01-03 03:55:04 - training - INFO -     - FAD: 0.2158 (samples: 33)
+2026-01-03 03:55:04 - training - INFO -     - NAD: 0.1384 (samples: 34)
+2026-01-03 03:55:04 - training - INFO -     - SAH: 0.1427 (samples: 35)
+2026-01-03 03:55:04 - training - INFO -     - SF4: 0.2508 (samples: 28)
+2026-01-03 03:55:08 - training - INFO - Per-group validation metrics:
+2026-01-03 03:55:08 - training - INFO -   Group cofactor:
+2026-01-03 03:55:08 - training - INFO -     - FAD: mcc: 0.6410, auroc: 0.9666, aupr: 0.7284
+2026-01-03 03:55:08 - training - INFO -     - NAD: mcc: 0.6430, auroc: 0.9761, aupr: 0.7311
+2026-01-03 03:55:08 - training - INFO -     - SAH: mcc: 0.6465, auroc: 0.9684, aupr: 0.7413
+2026-01-03 03:55:08 - training - INFO -     - SF4: mcc: 0.5551, auroc: 0.9592, aupr: 0.6471
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val Loss: 0.1834
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val FAD_mcc: 0.6410
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val FAD_auroc: 0.9666
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val FAD_aupr: 0.7284
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val NAD_mcc: 0.6430
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val NAD_auroc: 0.9761
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val NAD_aupr: 0.7311
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val SAH_mcc: 0.6465
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val SAH_auroc: 0.9684
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val SAH_aupr: 0.7413
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val SF4_mcc: 0.5551
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val SF4_auroc: 0.9592
+2026-01-03 03:55:08 - training - INFO - Epoch 8 Val SF4_aupr: 0.6471
+2026-01-03 03:55:08 - training - INFO - ---------- Epoch 9 ----------
+2026-01-03 03:55:47 - training - INFO - Epoch 9 Train Loss: 0.0394
+2026-01-03 03:55:51 - training - INFO - Validation losses per group:
+2026-01-03 03:55:51 - training - INFO -   Group cofactor: 0.2144 (samples: 130)
+2026-01-03 03:55:51 - training - INFO -     - FAD: 0.1969 (samples: 33)
+2026-01-03 03:55:51 - training - INFO -     - NAD: 0.1731 (samples: 34)
+2026-01-03 03:55:51 - training - INFO -     - SAH: 0.1933 (samples: 35)
+2026-01-03 03:55:51 - training - INFO -     - SF4: 0.3117 (samples: 28)
+2026-01-03 03:55:55 - training - INFO - Per-group validation metrics:
+2026-01-03 03:55:55 - training - INFO -   Group cofactor:
+2026-01-03 03:55:55 - training - INFO -     - FAD: mcc: 0.6404, auroc: 0.9688, aupr: 0.7365
+2026-01-03 03:55:55 - training - INFO -     - NAD: mcc: 0.6615, auroc: 0.9748, aupr: 0.7257
+2026-01-03 03:55:55 - training - INFO -     - SAH: mcc: 0.6787, auroc: 0.9677, aupr: 0.7450
+2026-01-03 03:55:55 - training - INFO -     - SF4: mcc: 0.4951, auroc: 0.9601, aupr: 0.6319
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val Loss: 0.2144
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val FAD_mcc: 0.6404
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val FAD_auroc: 0.9688
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val FAD_aupr: 0.7365
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val NAD_mcc: 0.6615
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val NAD_auroc: 0.9748
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val NAD_aupr: 0.7257
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val SAH_mcc: 0.6787
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val SAH_auroc: 0.9677
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val SAH_aupr: 0.7450
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val SF4_mcc: 0.4951
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val SF4_auroc: 0.9601
+2026-01-03 03:55:55 - training - INFO - Epoch 9 Val SF4_aupr: 0.6319
+2026-01-03 03:55:55 - training - INFO - ---------- Epoch 10 ----------
+2026-01-03 03:56:35 - training - INFO - Epoch 10 Train Loss: 0.0369
+2026-01-03 03:56:39 - training - INFO - Validation losses per group:
+2026-01-03 03:56:39 - training - INFO -   Group cofactor: 0.2478 (samples: 130)
+2026-01-03 03:56:39 - training - INFO -     - FAD: 0.2523 (samples: 33)
+2026-01-03 03:56:39 - training - INFO -     - NAD: 0.2559 (samples: 34)
+2026-01-03 03:56:39 - training - INFO -     - SAH: 0.2181 (samples: 35)
+2026-01-03 03:56:39 - training - INFO -     - SF4: 0.2699 (samples: 28)
+2026-01-03 03:56:43 - training - INFO - Per-group validation metrics:
+2026-01-03 03:56:43 - training - INFO -   Group cofactor:
+2026-01-03 03:56:43 - training - INFO -     - FAD: mcc: 0.6503, auroc: 0.9680, aupr: 0.7413
+2026-01-03 03:56:43 - training - INFO -     - NAD: mcc: 0.5888, auroc: 0.9624, aupr: 0.6614
+2026-01-03 03:56:43 - training - INFO -     - SAH: mcc: 0.5935, auroc: 0.9592, aupr: 0.6792
+2026-01-03 03:56:43 - training - INFO -     - SF4: mcc: 0.5520, auroc: 0.9518, aupr: 0.6623
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val Loss: 0.2478
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val FAD_mcc: 0.6503
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val FAD_auroc: 0.9680
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val FAD_aupr: 0.7413
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val NAD_mcc: 0.5888
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val NAD_auroc: 0.9624
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val NAD_aupr: 0.6614
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val SAH_mcc: 0.5935
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val SAH_auroc: 0.9592
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val SAH_aupr: 0.6792
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val SF4_mcc: 0.5520
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val SF4_auroc: 0.9518
+2026-01-03 03:56:43 - training - INFO - Epoch 10 Val SF4_aupr: 0.6623
+2026-01-03 03:56:43 - training - INFO - ---------- Epoch 11 ----------
+2026-01-03 03:57:22 - training - INFO - Epoch 11 Train Loss: 0.0314
+2026-01-03 03:57:26 - training - INFO - Validation losses per group:
+2026-01-03 03:57:26 - training - INFO -   Group cofactor: 0.2354 (samples: 130)
+2026-01-03 03:57:26 - training - INFO -     - FAD: 0.2320 (samples: 33)
+2026-01-03 03:57:26 - training - INFO -     - NAD: 0.2397 (samples: 34)
+2026-01-03 03:57:26 - training - INFO -     - SAH: 0.1967 (samples: 35)
+2026-01-03 03:57:26 - training - INFO -     - SF4: 0.2827 (samples: 28)
+2026-01-03 03:57:31 - training - INFO - Per-group validation metrics:
+2026-01-03 03:57:31 - training - INFO -   Group cofactor:
+2026-01-03 03:57:31 - training - INFO -     - FAD: mcc: 0.6324, auroc: 0.9627, aupr: 0.7120
+2026-01-03 03:57:31 - training - INFO -     - NAD: mcc: 0.6794, auroc: 0.9769, aupr: 0.7478
+2026-01-03 03:57:31 - training - INFO -     - SAH: mcc: 0.6753, auroc: 0.9658, aupr: 0.7419
+2026-01-03 03:57:31 - training - INFO -     - SF4: mcc: 0.5735, auroc: 0.9610, aupr: 0.6506
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val Loss: 0.2354
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val FAD_mcc: 0.6324
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val FAD_auroc: 0.9627
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val FAD_aupr: 0.7120
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val NAD_mcc: 0.6794
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val NAD_auroc: 0.9769
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val NAD_aupr: 0.7478
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val SAH_mcc: 0.6753
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val SAH_auroc: 0.9658
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val SAH_aupr: 0.7419
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val SF4_mcc: 0.5735
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val SF4_auroc: 0.9610
+2026-01-03 03:57:31 - training - INFO - Epoch 11 Val SF4_aupr: 0.6506
+2026-01-03 03:57:31 - training - INFO - ---------- Epoch 12 ----------
+2026-01-03 03:58:10 - training - INFO - Epoch 12 Train Loss: 0.0223
+2026-01-03 03:58:14 - training - INFO - Validation losses per group:
+2026-01-03 03:58:14 - training - INFO -   Group cofactor: 0.2518 (samples: 130)
+2026-01-03 03:58:14 - training - INFO -     - FAD: 0.2768 (samples: 33)
+2026-01-03 03:58:14 - training - INFO -     - NAD: 0.2755 (samples: 34)
+2026-01-03 03:58:14 - training - INFO -     - SAH: 0.2125 (samples: 35)
+2026-01-03 03:58:14 - training - INFO -     - SF4: 0.2427 (samples: 28)
+2026-01-03 03:58:18 - training - INFO - Per-group validation metrics:
+2026-01-03 03:58:18 - training - INFO -   Group cofactor:
+2026-01-03 03:58:18 - training - INFO -     - FAD: mcc: 0.6527, auroc: 0.9704, aupr: 0.7513
+2026-01-03 03:58:18 - training - INFO -     - NAD: mcc: 0.6600, auroc: 0.9758, aupr: 0.7373
+2026-01-03 03:58:18 - training - INFO -     - SAH: mcc: 0.6818, auroc: 0.9664, aupr: 0.7515
+2026-01-03 03:58:18 - training - INFO -     - SF4: mcc: 0.6072, auroc: 0.9619, aupr: 0.6637
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val Loss: 0.2518
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val FAD_mcc: 0.6527
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val FAD_auroc: 0.9704
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val FAD_aupr: 0.7513
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val NAD_mcc: 0.6600
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val NAD_auroc: 0.9758
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val NAD_aupr: 0.7373
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val SAH_mcc: 0.6818
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val SAH_auroc: 0.9664
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val SAH_aupr: 0.7515
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val SF4_mcc: 0.6072
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val SF4_auroc: 0.9619
+2026-01-03 03:58:18 - training - INFO - Epoch 12 Val SF4_aupr: 0.6637
+2026-01-03 03:58:18 - training - INFO - Saving model with best val aupr: 0.7259
+2026-01-03 03:58:18 - training - INFO - ---------- Epoch 13 ----------
+2026-01-03 03:58:57 - training - INFO - Epoch 13 Train Loss: 0.0168
+2026-01-03 03:59:02 - training - INFO - Validation losses per group:
+2026-01-03 03:59:02 - training - INFO -   Group cofactor: 0.2816 (samples: 130)
+2026-01-03 03:59:02 - training - INFO -     - FAD: 0.3226 (samples: 33)
+2026-01-03 03:59:02 - training - INFO -     - NAD: 0.2740 (samples: 34)
+2026-01-03 03:59:02 - training - INFO -     - SAH: 0.2298 (samples: 35)
+2026-01-03 03:59:02 - training - INFO -     - SF4: 0.3073 (samples: 28)
+2026-01-03 03:59:06 - training - INFO - Per-group validation metrics:
+2026-01-03 03:59:06 - training - INFO -   Group cofactor:
+2026-01-03 03:59:06 - training - INFO -     - FAD: mcc: 0.6256, auroc: 0.9641, aupr: 0.7148
+2026-01-03 03:59:06 - training - INFO -     - NAD: mcc: 0.6779, auroc: 0.9757, aupr: 0.7392
+2026-01-03 03:59:06 - training - INFO -     - SAH: mcc: 0.6668, auroc: 0.9617, aupr: 0.7285
+2026-01-03 03:59:06 - training - INFO -     - SF4: mcc: 0.5986, auroc: 0.9605, aupr: 0.6771
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val Loss: 0.2816
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val FAD_mcc: 0.6256
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val FAD_auroc: 0.9641
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val FAD_aupr: 0.7148
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val NAD_mcc: 0.6779
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val NAD_auroc: 0.9757
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val NAD_aupr: 0.7392
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val SAH_mcc: 0.6668
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val SAH_auroc: 0.9617
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val SAH_aupr: 0.7285
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val SF4_mcc: 0.5986
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val SF4_auroc: 0.9605
+2026-01-03 03:59:06 - training - INFO - Epoch 13 Val SF4_aupr: 0.6771
+2026-01-03 03:59:06 - training - INFO - ---------- Epoch 14 ----------
+2026-01-03 03:59:45 - training - INFO - Epoch 14 Train Loss: 0.0280
+2026-01-03 03:59:49 - training - INFO - Validation losses per group:
+2026-01-03 03:59:49 - training - INFO -   Group cofactor: 0.2968 (samples: 130)
+2026-01-03 03:59:49 - training - INFO -     - FAD: 0.3614 (samples: 33)
+2026-01-03 03:59:49 - training - INFO -     - NAD: 0.2581 (samples: 34)
+2026-01-03 03:59:49 - training - INFO -     - SAH: 0.2466 (samples: 35)
+2026-01-03 03:59:49 - training - INFO -     - SF4: 0.3303 (samples: 28)
+2026-01-03 03:59:54 - training - INFO - Per-group validation metrics:
+2026-01-03 03:59:54 - training - INFO -   Group cofactor:
+2026-01-03 03:59:54 - training - INFO -     - FAD: mcc: 0.6663, auroc: 0.9699, aupr: 0.7563
+2026-01-03 03:59:54 - training - INFO -     - NAD: mcc: 0.6777, auroc: 0.9752, aupr: 0.7390
+2026-01-03 03:59:54 - training - INFO -     - SAH: mcc: 0.6788, auroc: 0.9627, aupr: 0.7393
+2026-01-03 03:59:54 - training - INFO -     - SF4: mcc: 0.5068, auroc: 0.9558, aupr: 0.6130
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val Loss: 0.2968
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val FAD_mcc: 0.6663
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val FAD_auroc: 0.9699
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val FAD_aupr: 0.7563
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val NAD_mcc: 0.6777
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val NAD_auroc: 0.9752
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val NAD_aupr: 0.7390
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val SAH_mcc: 0.6788
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val SAH_auroc: 0.9627
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val SAH_aupr: 0.7393
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val SF4_mcc: 0.5068
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val SF4_auroc: 0.9558
+2026-01-03 03:59:54 - training - INFO - Epoch 14 Val SF4_aupr: 0.6130
+2026-01-03 03:59:54 - training - INFO - ---------- Epoch 15 ----------
+2026-01-03 04:00:33 - training - INFO - Epoch 15 Train Loss: 0.0104
+2026-01-03 04:00:37 - training - INFO - Validation losses per group:
+2026-01-03 04:00:37 - training - INFO -   Group cofactor: 0.2630 (samples: 130)
+2026-01-03 04:00:37 - training - INFO -     - FAD: 0.2782 (samples: 33)
+2026-01-03 04:00:37 - training - INFO -     - NAD: 0.2499 (samples: 34)
+2026-01-03 04:00:37 - training - INFO -     - SAH: 0.2291 (samples: 35)
+2026-01-03 04:00:37 - training - INFO -     - SF4: 0.3034 (samples: 28)
+2026-01-03 04:00:41 - training - INFO - Per-group validation metrics:
+2026-01-03 04:00:41 - training - INFO -   Group cofactor:
+2026-01-03 04:00:41 - training - INFO -     - FAD: mcc: 0.6586, auroc: 0.9672, aupr: 0.7441
+2026-01-03 04:00:41 - training - INFO -     - NAD: mcc: 0.6800, auroc: 0.9769, aupr: 0.7477
+2026-01-03 04:00:41 - training - INFO -     - SAH: mcc: 0.6813, auroc: 0.9634, aupr: 0.7471
+2026-01-03 04:00:41 - training - INFO -     - SF4: mcc: 0.6065, auroc: 0.9598, aupr: 0.6713
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val Loss: 0.2630
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val FAD_mcc: 0.6586
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val FAD_auroc: 0.9672
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val FAD_aupr: 0.7441
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val NAD_mcc: 0.6800
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val NAD_auroc: 0.9769
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val NAD_aupr: 0.7477
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val SAH_mcc: 0.6813
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val SAH_auroc: 0.9634
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val SAH_aupr: 0.7471
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val SF4_mcc: 0.6065
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val SF4_auroc: 0.9598
+2026-01-03 04:00:41 - training - INFO - Epoch 15 Val SF4_aupr: 0.6713
+2026-01-03 04:00:41 - training - INFO - Saving model with best val aupr: 0.7276
+2026-01-03 04:00:41 - training - INFO - ---------- Epoch 16 ----------
+2026-01-03 04:01:21 - training - INFO - Epoch 16 Train Loss: 0.0070
+2026-01-03 04:01:25 - training - INFO - Validation losses per group:
+2026-01-03 04:01:25 - training - INFO -   Group cofactor: 0.3199 (samples: 130)
+2026-01-03 04:01:25 - training - INFO -     - FAD: 0.3211 (samples: 33)
+2026-01-03 04:01:25 - training - INFO -     - NAD: 0.3265 (samples: 34)
+2026-01-03 04:01:25 - training - INFO -     - SAH: 0.2860 (samples: 35)
+2026-01-03 04:01:25 - training - INFO -     - SF4: 0.3528 (samples: 28)
+2026-01-03 04:01:29 - training - INFO - Per-group validation metrics:
+2026-01-03 04:01:29 - training - INFO -   Group cofactor:
+2026-01-03 04:01:29 - training - INFO -     - FAD: mcc: 0.6709, auroc: 0.9701, aupr: 0.7610
+2026-01-03 04:01:29 - training - INFO -     - NAD: mcc: 0.6730, auroc: 0.9754, aupr: 0.7447
+2026-01-03 04:01:29 - training - INFO -     - SAH: mcc: 0.6836, auroc: 0.9627, aupr: 0.7477
+2026-01-03 04:01:29 - training - INFO -     - SF4: mcc: 0.5644, auroc: 0.9601, aupr: 0.6588
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val Loss: 0.3199
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val FAD_mcc: 0.6709
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val FAD_auroc: 0.9701
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val FAD_aupr: 0.7610
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val NAD_mcc: 0.6730
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val NAD_auroc: 0.9754
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val NAD_aupr: 0.7447
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val SAH_mcc: 0.6836
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val SAH_auroc: 0.9627
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val SAH_aupr: 0.7477
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val SF4_mcc: 0.5644
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val SF4_auroc: 0.9601
+2026-01-03 04:01:29 - training - INFO - Epoch 16 Val SF4_aupr: 0.6588
+2026-01-03 04:01:29 - training - INFO - ---------- Epoch 17 ----------
+2026-01-03 04:02:08 - training - INFO - Epoch 17 Train Loss: 0.0045
+2026-01-03 04:02:12 - training - INFO - Validation losses per group:
+2026-01-03 04:02:12 - training - INFO -   Group cofactor: 0.3148 (samples: 130)
+2026-01-03 04:02:12 - training - INFO -     - FAD: 0.3698 (samples: 33)
+2026-01-03 04:02:12 - training - INFO -     - NAD: 0.2985 (samples: 34)
+2026-01-03 04:02:12 - training - INFO -     - SAH: 0.2746 (samples: 35)
+2026-01-03 04:02:12 - training - INFO -     - SF4: 0.3202 (samples: 28)
+2026-01-03 04:02:16 - training - INFO - Per-group validation metrics:
+2026-01-03 04:02:16 - training - INFO -   Group cofactor:
+2026-01-03 04:02:16 - training - INFO -     - FAD: mcc: 0.6705, auroc: 0.9699, aupr: 0.7568
+2026-01-03 04:02:16 - training - INFO -     - NAD: mcc: 0.6768, auroc: 0.9760, aupr: 0.7511
+2026-01-03 04:02:16 - training - INFO -     - SAH: mcc: 0.6918, auroc: 0.9631, aupr: 0.7476
+2026-01-03 04:02:16 - training - INFO -     - SF4: mcc: 0.6074, auroc: 0.9598, aupr: 0.6698
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val Loss: 0.3148
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val FAD_mcc: 0.6705
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val FAD_auroc: 0.9699
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val FAD_aupr: 0.7568
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val NAD_mcc: 0.6768
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val NAD_auroc: 0.9760
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val NAD_aupr: 0.7511
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val SAH_mcc: 0.6918
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val SAH_auroc: 0.9631
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val SAH_aupr: 0.7476
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val SF4_mcc: 0.6074
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val SF4_auroc: 0.9598
+2026-01-03 04:02:16 - training - INFO - Epoch 17 Val SF4_aupr: 0.6698
+2026-01-03 04:02:16 - training - INFO - Saving model with best val aupr: 0.7313
+2026-01-03 04:02:16 - training - INFO - ---------- Epoch 18 ----------
+2026-01-03 04:02:56 - training - INFO - Epoch 18 Train Loss: 0.0052
+2026-01-03 04:03:00 - training - INFO - Validation losses per group:
+2026-01-03 04:03:00 - training - INFO -   Group cofactor: 0.3730 (samples: 130)
+2026-01-03 04:03:00 - training - INFO -     - FAD: 0.3833 (samples: 33)
+2026-01-03 04:03:00 - training - INFO -     - NAD: 0.3450 (samples: 34)
+2026-01-03 04:03:00 - training - INFO -     - SAH: 0.3157 (samples: 35)
+2026-01-03 04:03:00 - training - INFO -     - SF4: 0.4664 (samples: 28)
+2026-01-03 04:03:04 - training - INFO - Per-group validation metrics:
+2026-01-03 04:03:04 - training - INFO -   Group cofactor:
+2026-01-03 04:03:04 - training - INFO -     - FAD: mcc: 0.6694, auroc: 0.9700, aupr: 0.7575
+2026-01-03 04:03:04 - training - INFO -     - NAD: mcc: 0.6830, auroc: 0.9759, aupr: 0.7505
+2026-01-03 04:03:04 - training - INFO -     - SAH: mcc: 0.6764, auroc: 0.9622, aupr: 0.7468
+2026-01-03 04:03:04 - training - INFO -     - SF4: mcc: 0.5568, auroc: 0.9607, aupr: 0.6724
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val Loss: 0.3730
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val FAD_mcc: 0.6694
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val FAD_auroc: 0.9700
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val FAD_aupr: 0.7575
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val NAD_mcc: 0.6830
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val NAD_auroc: 0.9759
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val NAD_aupr: 0.7505
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val SAH_mcc: 0.6764
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val SAH_auroc: 0.9622
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val SAH_aupr: 0.7468
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val SF4_mcc: 0.5568
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val SF4_auroc: 0.9607
+2026-01-03 04:03:04 - training - INFO - Epoch 18 Val SF4_aupr: 0.6724
+2026-01-03 04:03:04 - training - INFO - ---------- Epoch 19 ----------
+2026-01-03 04:03:43 - training - INFO - Epoch 19 Train Loss: 0.0050
+2026-01-03 04:03:47 - training - INFO - Validation losses per group:
+2026-01-03 04:03:47 - training - INFO -   Group cofactor: 0.4096 (samples: 130)
+2026-01-03 04:03:47 - training - INFO -     - FAD: 0.4656 (samples: 33)
+2026-01-03 04:03:47 - training - INFO -     - NAD: 0.4087 (samples: 34)
+2026-01-03 04:03:47 - training - INFO -     - SAH: 0.3403 (samples: 35)
+2026-01-03 04:03:47 - training - INFO -     - SF4: 0.4314 (samples: 28)
+2026-01-03 04:03:52 - training - INFO - Per-group validation metrics:
+2026-01-03 04:03:52 - training - INFO -   Group cofactor:
+2026-01-03 04:03:52 - training - INFO -     - FAD: mcc: 0.6771, auroc: 0.9697, aupr: 0.7570
+2026-01-03 04:03:52 - training - INFO -     - NAD: mcc: 0.6703, auroc: 0.9750, aupr: 0.7461
+2026-01-03 04:03:52 - training - INFO -     - SAH: mcc: 0.6832, auroc: 0.9608, aupr: 0.7429
+2026-01-03 04:03:52 - training - INFO -     - SF4: mcc: 0.5965, auroc: 0.9580, aupr: 0.6733
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val Loss: 0.4096
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val FAD_mcc: 0.6771
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val FAD_auroc: 0.9697
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val FAD_aupr: 0.7570
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val NAD_mcc: 0.6703
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val NAD_auroc: 0.9750
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val NAD_aupr: 0.7461
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val SAH_mcc: 0.6832
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val SAH_auroc: 0.9608
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val SAH_aupr: 0.7429
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val SF4_mcc: 0.5965
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val SF4_auroc: 0.9580
+2026-01-03 04:03:52 - training - INFO - Epoch 19 Val SF4_aupr: 0.6733
+2026-01-03 04:03:52 - training - INFO - ---------- Epoch 20 ----------
+2026-01-03 04:04:31 - training - INFO - Epoch 20 Train Loss: 0.0024
+2026-01-03 04:04:35 - training - INFO - Validation losses per group:
+2026-01-03 04:04:35 - training - INFO -   Group cofactor: 0.3763 (samples: 130)
+2026-01-03 04:04:35 - training - INFO -     - FAD: 0.4300 (samples: 33)
+2026-01-03 04:04:35 - training - INFO -     - NAD: 0.3724 (samples: 34)
+2026-01-03 04:04:35 - training - INFO -     - SAH: 0.3285 (samples: 35)
+2026-01-03 04:04:35 - training - INFO -     - SF4: 0.3773 (samples: 28)
+2026-01-03 04:04:39 - training - INFO - Per-group validation metrics:
+2026-01-03 04:04:39 - training - INFO -   Group cofactor:
+2026-01-03 04:04:39 - training - INFO -     - FAD: mcc: 0.6742, auroc: 0.9700, aupr: 0.7571
+2026-01-03 04:04:39 - training - INFO -     - NAD: mcc: 0.6772, auroc: 0.9754, aupr: 0.7500
+2026-01-03 04:04:39 - training - INFO -     - SAH: mcc: 0.6813, auroc: 0.9620, aupr: 0.7459
+2026-01-03 04:04:39 - training - INFO -     - SF4: mcc: 0.6103, auroc: 0.9589, aupr: 0.6654
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val Loss: 0.3763
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val FAD_mcc: 0.6742
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val FAD_auroc: 0.9700
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val FAD_aupr: 0.7571
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val NAD_mcc: 0.6772
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val NAD_auroc: 0.9754
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val NAD_aupr: 0.7500
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val SAH_mcc: 0.6813
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val SAH_auroc: 0.9620
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val SAH_aupr: 0.7459
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val SF4_mcc: 0.6103
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val SF4_auroc: 0.9589
+2026-01-03 04:04:39 - training - INFO - Epoch 20 Val SF4_aupr: 0.6654
+2026-01-03 04:04:39 - training - INFO - ---------- Epoch 21 ----------
+2026-01-03 04:05:19 - training - INFO - Epoch 21 Train Loss: 0.0026
+2026-01-03 04:05:23 - training - INFO - Validation losses per group:
+2026-01-03 04:05:23 - training - INFO -   Group cofactor: 0.4027 (samples: 130)
+2026-01-03 04:05:23 - training - INFO -     - FAD: 0.4658 (samples: 33)
+2026-01-03 04:05:23 - training - INFO -     - NAD: 0.3997 (samples: 34)
+2026-01-03 04:05:23 - training - INFO -     - SAH: 0.3506 (samples: 35)
+2026-01-03 04:05:23 - training - INFO -     - SF4: 0.3972 (samples: 28)
+2026-01-03 04:05:27 - training - INFO - Per-group validation metrics:
+2026-01-03 04:05:27 - training - INFO -   Group cofactor:
+2026-01-03 04:05:27 - training - INFO -     - FAD: mcc: 0.6736, auroc: 0.9697, aupr: 0.7563
+2026-01-03 04:05:27 - training - INFO -     - NAD: mcc: 0.6754, auroc: 0.9747, aupr: 0.7472
+2026-01-03 04:05:27 - training - INFO -     - SAH: mcc: 0.6750, auroc: 0.9613, aupr: 0.7417
+2026-01-03 04:05:27 - training - INFO -     - SF4: mcc: 0.5985, auroc: 0.9564, aupr: 0.6589
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val Loss: 0.4027
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val FAD_mcc: 0.6736
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val FAD_auroc: 0.9697
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val FAD_aupr: 0.7563
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val NAD_mcc: 0.6754
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val NAD_auroc: 0.9747
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val NAD_aupr: 0.7472
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val SAH_mcc: 0.6750
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val SAH_auroc: 0.9613
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val SAH_aupr: 0.7417
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val SF4_mcc: 0.5985
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val SF4_auroc: 0.9564
+2026-01-03 04:05:27 - training - INFO - Epoch 21 Val SF4_aupr: 0.6589
+2026-01-03 04:05:27 - training - INFO - ---------- Epoch 22 ----------
+2026-01-03 04:06:06 - training - INFO - Epoch 22 Train Loss: 0.0031
+2026-01-03 04:06:11 - training - INFO - Validation losses per group:
+2026-01-03 04:06:11 - training - INFO -   Group cofactor: 0.5142 (samples: 130)
+2026-01-03 04:06:11 - training - INFO -     - FAD: 0.5148 (samples: 33)
+2026-01-03 04:06:11 - training - INFO -     - NAD: 0.4483 (samples: 34)
+2026-01-03 04:06:11 - training - INFO -     - SAH: 0.3784 (samples: 35)
+2026-01-03 04:06:11 - training - INFO -     - SF4: 0.7634 (samples: 28)
+2026-01-03 04:06:15 - training - INFO - Per-group validation metrics:
+2026-01-03 04:06:15 - training - INFO -   Group cofactor:
+2026-01-03 04:06:15 - training - INFO -     - FAD: mcc: 0.6748, auroc: 0.9706, aupr: 0.7583
+2026-01-03 04:06:15 - training - INFO -     - NAD: mcc: 0.6742, auroc: 0.9745, aupr: 0.7488
+2026-01-03 04:06:15 - training - INFO -     - SAH: mcc: 0.6828, auroc: 0.9622, aupr: 0.7490
+2026-01-03 04:06:15 - training - INFO -     - SF4: mcc: 0.4724, auroc: 0.9553, aupr: 0.6294
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val Loss: 0.5142
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val FAD_mcc: 0.6748
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val FAD_auroc: 0.9706
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val FAD_aupr: 0.7583
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val NAD_mcc: 0.6742
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val NAD_auroc: 0.9745
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val NAD_aupr: 0.7488
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val SAH_mcc: 0.6828
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val SAH_auroc: 0.9622
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val SAH_aupr: 0.7490
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val SF4_mcc: 0.4724
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val SF4_auroc: 0.9553
+2026-01-03 04:06:15 - training - INFO - Epoch 22 Val SF4_aupr: 0.6294
+2026-01-03 04:06:15 - training - INFO - ---------- Epoch 23 ----------
+2026-01-03 04:06:54 - training - INFO - Epoch 23 Train Loss: 0.0036
+2026-01-03 04:06:58 - training - INFO - Validation losses per group:
+2026-01-03 04:06:58 - training - INFO -   Group cofactor: 0.4738 (samples: 130)
+2026-01-03 04:06:58 - training - INFO -     - FAD: 0.5552 (samples: 33)
+2026-01-03 04:06:58 - training - INFO -     - NAD: 0.4745 (samples: 34)
+2026-01-03 04:06:58 - training - INFO -     - SAH: 0.3811 (samples: 35)
+2026-01-03 04:06:58 - training - INFO -     - SF4: 0.4928 (samples: 28)
+2026-01-03 04:07:02 - training - INFO - Per-group validation metrics:
+2026-01-03 04:07:02 - training - INFO -   Group cofactor:
+2026-01-03 04:07:02 - training - INFO -     - FAD: mcc: 0.6636, auroc: 0.9684, aupr: 0.7474
+2026-01-03 04:07:02 - training - INFO -     - NAD: mcc: 0.6614, auroc: 0.9737, aupr: 0.7412
+2026-01-03 04:07:02 - training - INFO -     - SAH: mcc: 0.6682, auroc: 0.9580, aupr: 0.7238
+2026-01-03 04:07:02 - training - INFO -     - SF4: mcc: 0.5795, auroc: 0.9519, aupr: 0.6708
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val Loss: 0.4738
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val FAD_mcc: 0.6636
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val FAD_auroc: 0.9684
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val FAD_aupr: 0.7474
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val NAD_mcc: 0.6614
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val NAD_auroc: 0.9737
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val NAD_aupr: 0.7412
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val SAH_mcc: 0.6682
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val SAH_auroc: 0.9580
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val SAH_aupr: 0.7238
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val SF4_mcc: 0.5795
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val SF4_auroc: 0.9519
+2026-01-03 04:07:02 - training - INFO - Epoch 23 Val SF4_aupr: 0.6708
+2026-01-03 04:07:02 - training - INFO - ---------- Epoch 24 ----------
+2026-01-03 04:07:41 - training - INFO - Epoch 24 Train Loss: 0.0031
+2026-01-03 04:07:46 - training - INFO - Validation losses per group:
+2026-01-03 04:07:46 - training - INFO -   Group cofactor: 0.4807 (samples: 130)
+2026-01-03 04:07:46 - training - INFO -     - FAD: 0.5446 (samples: 33)
+2026-01-03 04:07:46 - training - INFO -     - NAD: 0.4412 (samples: 34)
+2026-01-03 04:07:46 - training - INFO -     - SAH: 0.4012 (samples: 35)
+2026-01-03 04:07:46 - training - INFO -     - SF4: 0.5528 (samples: 28)
+2026-01-03 04:07:50 - training - INFO - Per-group validation metrics:
+2026-01-03 04:07:50 - training - INFO -   Group cofactor:
+2026-01-03 04:07:50 - training - INFO -     - FAD: mcc: 0.6832, auroc: 0.9704, aupr: 0.7596
+2026-01-03 04:07:50 - training - INFO -     - NAD: mcc: 0.6706, auroc: 0.9754, aupr: 0.7465
+2026-01-03 04:07:50 - training - INFO -     - SAH: mcc: 0.6803, auroc: 0.9596, aupr: 0.7417
+2026-01-03 04:07:50 - training - INFO -     - SF4: mcc: 0.5997, auroc: 0.9557, aupr: 0.6856
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val Loss: 0.4807
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val FAD_mcc: 0.6832
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val FAD_auroc: 0.9704
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val FAD_aupr: 0.7596
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val NAD_mcc: 0.6706
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val NAD_auroc: 0.9754
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val NAD_aupr: 0.7465
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val SAH_mcc: 0.6803
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val SAH_auroc: 0.9596
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val SAH_aupr: 0.7417
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val SF4_mcc: 0.5997
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val SF4_auroc: 0.9557
+2026-01-03 04:07:50 - training - INFO - Epoch 24 Val SF4_aupr: 0.6856
+2026-01-03 04:07:50 - training - INFO - Saving model with best val aupr: 0.7333
+2026-01-03 04:07:50 - training - INFO - ---------- Epoch 25 ----------
+2026-01-03 04:08:29 - training - INFO - Epoch 25 Train Loss: 0.0194
+2026-01-03 04:08:33 - training - INFO - Validation losses per group:
+2026-01-03 04:08:33 - training - INFO -   Group cofactor: 0.4608 (samples: 130)
+2026-01-03 04:08:33 - training - INFO -     - FAD: 0.5817 (samples: 33)
+2026-01-03 04:08:33 - training - INFO -     - NAD: 0.4911 (samples: 34)
+2026-01-03 04:08:33 - training - INFO -     - SAH: 0.3859 (samples: 35)
+2026-01-03 04:08:33 - training - INFO -     - SF4: 0.3751 (samples: 28)
+2026-01-03 04:08:37 - training - INFO - Per-group validation metrics:
+2026-01-03 04:08:37 - training - INFO -   Group cofactor:
+2026-01-03 04:08:37 - training - INFO -     - FAD: mcc: 0.6563, auroc: 0.9657, aupr: 0.7455
+2026-01-03 04:08:37 - training - INFO -     - NAD: mcc: 0.6392, auroc: 0.9722, aupr: 0.7338
+2026-01-03 04:08:37 - training - INFO -     - SAH: mcc: 0.6767, auroc: 0.9594, aupr: 0.7331
+2026-01-03 04:08:37 - training - INFO -     - SF4: mcc: 0.5818, auroc: 0.9535, aupr: 0.6671
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val Loss: 0.4608
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val FAD_mcc: 0.6563
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val FAD_auroc: 0.9657
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val FAD_aupr: 0.7455
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val NAD_mcc: 0.6392
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val NAD_auroc: 0.9722
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val NAD_aupr: 0.7338
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val SAH_mcc: 0.6767
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val SAH_auroc: 0.9594
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val SAH_aupr: 0.7331
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val SF4_mcc: 0.5818
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val SF4_auroc: 0.9535
+2026-01-03 04:08:37 - training - INFO - Epoch 25 Val SF4_aupr: 0.6671
+2026-01-03 04:08:37 - training - INFO - ---------- Epoch 26 ----------
+2026-01-03 04:09:17 - training - INFO - Epoch 26 Train Loss: 0.0058
+2026-01-03 04:09:21 - training - INFO - Validation losses per group:
+2026-01-03 04:09:21 - training - INFO -   Group cofactor: 0.3923 (samples: 130)
+2026-01-03 04:09:21 - training - INFO -     - FAD: 0.4808 (samples: 33)
+2026-01-03 04:09:21 - training - INFO -     - NAD: 0.4534 (samples: 34)
+2026-01-03 04:09:21 - training - INFO -     - SAH: 0.3176 (samples: 35)
+2026-01-03 04:09:21 - training - INFO -     - SF4: 0.3072 (samples: 28)
+2026-01-03 04:09:25 - training - INFO - Per-group validation metrics:
+2026-01-03 04:09:25 - training - INFO -   Group cofactor:
+2026-01-03 04:09:25 - training - INFO -     - FAD: mcc: 0.6672, auroc: 0.9676, aupr: 0.7516
+2026-01-03 04:09:25 - training - INFO -     - NAD: mcc: 0.6424, auroc: 0.9731, aupr: 0.7369
+2026-01-03 04:09:25 - training - INFO -     - SAH: mcc: 0.6827, auroc: 0.9603, aupr: 0.7381
+2026-01-03 04:09:25 - training - INFO -     - SF4: mcc: 0.5995, auroc: 0.9581, aupr: 0.6608
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val Loss: 0.3923
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val FAD_mcc: 0.6672
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val FAD_auroc: 0.9676
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val FAD_aupr: 0.7516
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val NAD_mcc: 0.6424
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val NAD_auroc: 0.9731
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val NAD_aupr: 0.7369
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val SAH_mcc: 0.6827
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val SAH_auroc: 0.9603
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val SAH_aupr: 0.7381
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val SF4_mcc: 0.5995
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val SF4_auroc: 0.9581
+2026-01-03 04:09:25 - training - INFO - Epoch 26 Val SF4_aupr: 0.6608
+2026-01-03 04:09:25 - training - INFO - ---------- Epoch 27 ----------
+2026-01-03 04:10:04 - training - INFO - Epoch 27 Train Loss: 0.0049
+2026-01-03 04:10:08 - training - INFO - Validation losses per group:
+2026-01-03 04:10:08 - training - INFO -   Group cofactor: 0.4379 (samples: 130)
+2026-01-03 04:10:08 - training - INFO -     - FAD: 0.4429 (samples: 33)
+2026-01-03 04:10:08 - training - INFO -     - NAD: 0.3691 (samples: 34)
+2026-01-03 04:10:08 - training - INFO -     - SAH: 0.3761 (samples: 35)
+2026-01-03 04:10:08 - training - INFO -     - SF4: 0.5929 (samples: 28)
+2026-01-03 04:10:13 - training - INFO - Per-group validation metrics:
+2026-01-03 04:10:13 - training - INFO -   Group cofactor:
+2026-01-03 04:10:13 - training - INFO -     - FAD: mcc: 0.6797, auroc: 0.9699, aupr: 0.7639
+2026-01-03 04:10:13 - training - INFO -     - NAD: mcc: 0.6718, auroc: 0.9761, aupr: 0.7464
+2026-01-03 04:10:13 - training - INFO -     - SAH: mcc: 0.6892, auroc: 0.9617, aupr: 0.7472
+2026-01-03 04:10:13 - training - INFO -     - SF4: mcc: 0.5361, auroc: 0.9568, aupr: 0.6745
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val Loss: 0.4379
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val FAD_mcc: 0.6797
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val FAD_auroc: 0.9699
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val FAD_aupr: 0.7639
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val NAD_mcc: 0.6718
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val NAD_auroc: 0.9761
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val NAD_aupr: 0.7464
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val SAH_mcc: 0.6892
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val SAH_auroc: 0.9617
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val SAH_aupr: 0.7472
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val SF4_mcc: 0.5361
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val SF4_auroc: 0.9568
+2026-01-03 04:10:13 - training - INFO - Epoch 27 Val SF4_aupr: 0.6745
+2026-01-03 04:10:13 - training - INFO - ---------- Epoch 28 ----------
+2026-01-03 04:10:52 - training - INFO - Epoch 28 Train Loss: 0.0027
+2026-01-03 04:10:56 - training - INFO - Validation losses per group:
+2026-01-03 04:10:56 - training - INFO -   Group cofactor: 0.3732 (samples: 130)
+2026-01-03 04:10:56 - training - INFO -     - FAD: 0.4496 (samples: 33)
+2026-01-03 04:10:56 - training - INFO -     - NAD: 0.3512 (samples: 34)
+2026-01-03 04:10:56 - training - INFO -     - SAH: 0.3325 (samples: 35)
+2026-01-03 04:10:56 - training - INFO -     - SF4: 0.3609 (samples: 28)
+2026-01-03 04:11:00 - training - INFO - Per-group validation metrics:
+2026-01-03 04:11:00 - training - INFO -   Group cofactor:
+2026-01-03 04:11:00 - training - INFO -     - FAD: mcc: 0.6718, auroc: 0.9682, aupr: 0.7601
+2026-01-03 04:11:00 - training - INFO -     - NAD: mcc: 0.6697, auroc: 0.9749, aupr: 0.7291
+2026-01-03 04:11:00 - training - INFO -     - SAH: mcc: 0.6847, auroc: 0.9617, aupr: 0.7441
+2026-01-03 04:11:00 - training - INFO -     - SF4: mcc: 0.6112, auroc: 0.9603, aupr: 0.6673
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val Loss: 0.3732
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val FAD_mcc: 0.6718
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val FAD_auroc: 0.9682
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val FAD_aupr: 0.7601
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val NAD_mcc: 0.6697
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val NAD_auroc: 0.9749
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val NAD_aupr: 0.7291
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val SAH_mcc: 0.6847
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val SAH_auroc: 0.9617
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val SAH_aupr: 0.7441
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val SF4_mcc: 0.6112
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val SF4_auroc: 0.9603
+2026-01-03 04:11:00 - training - INFO - Epoch 28 Val SF4_aupr: 0.6673
+2026-01-03 04:11:00 - training - INFO - ---------- Epoch 29 ----------
+2026-01-03 04:11:39 - training - INFO - Epoch 29 Train Loss: 0.0033
+2026-01-03 04:11:44 - training - INFO - Validation losses per group:
+2026-01-03 04:11:44 - training - INFO -   Group cofactor: 0.5056 (samples: 130)
+2026-01-03 04:11:44 - training - INFO -     - FAD: 0.4922 (samples: 33)
+2026-01-03 04:11:44 - training - INFO -     - NAD: 0.4168 (samples: 34)
+2026-01-03 04:11:44 - training - INFO -     - SAH: 0.4089 (samples: 35)
+2026-01-03 04:11:44 - training - INFO -     - SF4: 0.7502 (samples: 28)
+2026-01-03 04:11:48 - training - INFO - Per-group validation metrics:
+2026-01-03 04:11:48 - training - INFO -   Group cofactor:
+2026-01-03 04:11:48 - training - INFO -     - FAD: mcc: 0.6865, auroc: 0.9708, aupr: 0.7711
+2026-01-03 04:11:48 - training - INFO -     - NAD: mcc: 0.6726, auroc: 0.9758, aupr: 0.7452
+2026-01-03 04:11:48 - training - INFO -     - SAH: mcc: 0.6904, auroc: 0.9610, aupr: 0.7491
+2026-01-03 04:11:48 - training - INFO -     - SF4: mcc: 0.5076, auroc: 0.9580, aupr: 0.6644
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val Loss: 0.5056
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val FAD_mcc: 0.6865
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val FAD_auroc: 0.9708
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val FAD_aupr: 0.7711
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val NAD_mcc: 0.6726
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val NAD_auroc: 0.9758
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val NAD_aupr: 0.7452
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val SAH_mcc: 0.6904
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val SAH_auroc: 0.9610
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val SAH_aupr: 0.7491
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val SF4_mcc: 0.5076
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val SF4_auroc: 0.9580
+2026-01-03 04:11:48 - training - INFO - Epoch 29 Val SF4_aupr: 0.6644
+2026-01-03 04:11:48 - training - INFO - ---------- Epoch 30 ----------
+2026-01-03 04:12:27 - training - INFO - Epoch 30 Train Loss: 0.0036
+2026-01-03 04:12:31 - training - INFO - Validation losses per group:
+2026-01-03 04:12:31 - training - INFO -   Group cofactor: 0.4188 (samples: 130)
+2026-01-03 04:12:31 - training - INFO -     - FAD: 0.4971 (samples: 33)
+2026-01-03 04:12:31 - training - INFO -     - NAD: 0.3991 (samples: 34)
+2026-01-03 04:12:31 - training - INFO -     - SAH: 0.3644 (samples: 35)
+2026-01-03 04:12:31 - training - INFO -     - SF4: 0.4184 (samples: 28)
+2026-01-03 04:12:36 - training - INFO - Per-group validation metrics:
+2026-01-03 04:12:36 - training - INFO -   Group cofactor:
+2026-01-03 04:12:36 - training - INFO -     - FAD: mcc: 0.6786, auroc: 0.9692, aupr: 0.7606
+2026-01-03 04:12:36 - training - INFO -     - NAD: mcc: 0.6697, auroc: 0.9744, aupr: 0.7345
+2026-01-03 04:12:36 - training - INFO -     - SAH: mcc: 0.6857, auroc: 0.9616, aupr: 0.7407
+2026-01-03 04:12:36 - training - INFO -     - SF4: mcc: 0.5880, auroc: 0.9574, aupr: 0.6546
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val Loss: 0.4188
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val FAD_mcc: 0.6786
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val FAD_auroc: 0.9692
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val FAD_aupr: 0.7606
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val NAD_mcc: 0.6697
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val NAD_auroc: 0.9744
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val NAD_aupr: 0.7345
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val SAH_mcc: 0.6857
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val SAH_auroc: 0.9616
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val SAH_aupr: 0.7407
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val SF4_mcc: 0.5880
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val SF4_auroc: 0.9574
+2026-01-03 04:12:36 - training - INFO - Epoch 30 Val SF4_aupr: 0.6546
+2026-01-03 04:12:36 - training - INFO - ---------- Epoch 31 ----------
+2026-01-03 04:13:15 - training - INFO - Epoch 31 Train Loss: 0.0061
+2026-01-03 04:13:19 - training - INFO - Validation losses per group:
+2026-01-03 04:13:19 - training - INFO -   Group cofactor: 0.4617 (samples: 130)
+2026-01-03 04:13:19 - training - INFO -     - FAD: 0.4619 (samples: 33)
+2026-01-03 04:13:19 - training - INFO -     - NAD: 0.3806 (samples: 34)
+2026-01-03 04:13:19 - training - INFO -     - SAH: 0.3802 (samples: 35)
+2026-01-03 04:13:19 - training - INFO -     - SF4: 0.6620 (samples: 28)
+2026-01-03 04:13:23 - training - INFO - Per-group validation metrics:
+2026-01-03 04:13:23 - training - INFO -   Group cofactor:
+2026-01-03 04:13:23 - training - INFO -     - FAD: mcc: 0.6815, auroc: 0.9706, aupr: 0.7731
+2026-01-03 04:13:23 - training - INFO -     - NAD: mcc: 0.6728, auroc: 0.9763, aupr: 0.7512
+2026-01-03 04:13:23 - training - INFO -     - SAH: mcc: 0.6863, auroc: 0.9605, aupr: 0.7465
+2026-01-03 04:13:23 - training - INFO -     - SF4: mcc: 0.5544, auroc: 0.9527, aupr: 0.6658
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val Loss: 0.4617
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val FAD_mcc: 0.6815
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val FAD_auroc: 0.9706
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val FAD_aupr: 0.7731
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val NAD_mcc: 0.6728
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val NAD_auroc: 0.9763
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val NAD_aupr: 0.7512
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val SAH_mcc: 0.6863
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val SAH_auroc: 0.9605
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val SAH_aupr: 0.7465
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val SF4_mcc: 0.5544
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val SF4_auroc: 0.9527
+2026-01-03 04:13:23 - training - INFO - Epoch 31 Val SF4_aupr: 0.6658
+2026-01-03 04:13:23 - training - INFO - ---------- Epoch 32 ----------
+2026-01-03 04:14:02 - training - INFO - Epoch 32 Train Loss: 0.0043
+2026-01-03 04:14:07 - training - INFO - Validation losses per group:
+2026-01-03 04:14:07 - training - INFO -   Group cofactor: 0.4111 (samples: 130)
+2026-01-03 04:14:07 - training - INFO -     - FAD: 0.4851 (samples: 33)
+2026-01-03 04:14:07 - training - INFO -     - NAD: 0.3798 (samples: 34)
+2026-01-03 04:14:07 - training - INFO -     - SAH: 0.3562 (samples: 35)
+2026-01-03 04:14:07 - training - INFO -     - SF4: 0.4303 (samples: 28)
+2026-01-03 04:14:11 - training - INFO - Per-group validation metrics:
+2026-01-03 04:14:11 - training - INFO -   Group cofactor:
+2026-01-03 04:14:11 - training - INFO -     - FAD: mcc: 0.6732, auroc: 0.9692, aupr: 0.7618
+2026-01-03 04:14:11 - training - INFO -     - NAD: mcc: 0.6664, auroc: 0.9746, aupr: 0.7404
+2026-01-03 04:14:11 - training - INFO -     - SAH: mcc: 0.6871, auroc: 0.9602, aupr: 0.7375
+2026-01-03 04:14:11 - training - INFO -     - SF4: mcc: 0.6058, auroc: 0.9555, aupr: 0.6656
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val Loss: 0.4111
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val FAD_mcc: 0.6732
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val FAD_auroc: 0.9692
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val FAD_aupr: 0.7618
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val NAD_mcc: 0.6664
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val NAD_auroc: 0.9746
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val NAD_aupr: 0.7404
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val SAH_mcc: 0.6871
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val SAH_auroc: 0.9602
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val SAH_aupr: 0.7375
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val SF4_mcc: 0.6058
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val SF4_auroc: 0.9555
+2026-01-03 04:14:11 - training - INFO - Epoch 32 Val SF4_aupr: 0.6656
+2026-01-03 04:14:11 - training - INFO - Early stopping triggered after 8 epochs without improvement in aupr (threshold: 0.001)
+2026-01-03 04:14:11 - training - INFO - Early stop at Epoch 32
+2026-01-03 04:14:11 - training - INFO - ============================================================
+2026-01-03 04:14:11 - training - INFO - Training completed!
+2026-01-03 04:14:11 - training - INFO - ============================================================
+2026-01-03 04:14:45 - training - INFO - Starting training with configuration:
+2026-01-03 04:14:45 - training - INFO - hidden_size: None
+2026-01-03 04:14:45 - training - INFO - num_attention_head: 8
+2026-01-03 04:14:45 - training - INFO - attention_probs_dropout: 0.1
+2026-01-03 04:14:45 - training - INFO - plm_model: ./models/esm2/esm2_t33_650M_UR50D
+2026-01-03 04:14:45 - training - INFO - pooling_method: convbert
+2026-01-03 04:14:45 - training - INFO - pooling_dropout: 0.1
+2026-01-03 04:14:45 - training - INFO - mlp_hidden_dims: [512, 256]
+2026-01-03 04:14:45 - training - INFO - mlp_activation: relu
+2026-01-03 04:14:45 - training - INFO - lstm_hidden_size: 256
+2026-01-03 04:14:45 - training - INFO - lstm_num_layers: 2
+2026-01-03 04:14:45 - training - INFO - lstm_bidirectional: True
+2026-01-03 04:14:45 - training - INFO - bilstm_pooling: mean
+2026-01-03 04:14:45 - training - INFO - num_cnn_layers: 3
+2026-01-03 04:14:45 - training - INFO - kernel_size: 7
+2026-01-03 04:14:45 - training - INFO - nhead: 8
+2026-01-03 04:14:45 - training - INFO - hidden_dim: 512
+2026-01-03 04:14:45 - training - INFO - feature_extractor_path: None
+2026-01-03 04:14:45 - training - INFO - plm_encoder_path: None
+2026-01-03 04:14:45 - training - INFO - num_hidden_layers: 1
+2026-01-03 04:14:45 - training - INFO - dataset: None
+2026-01-03 04:14:45 - training - INFO - dataset_config: None
+2026-01-03 04:14:45 - training - INFO - num_labels: 2
+2026-01-03 04:14:45 - training - INFO - problem_type: single_label_classification
+2026-01-03 04:14:45 - training - INFO - pdb_type: None
+2026-01-03 04:14:45 - training - INFO - train_file: None
+2026-01-03 04:14:45 - training - INFO - valid_file: None
+2026-01-03 04:14:45 - training - INFO - test_file: None
+2026-01-03 04:14:45 - training - INFO - metrics: ['mcc', 'auroc', 'aupr']
+2026-01-03 04:14:45 - training - INFO - data_group_dir: ./dataset/data_group
+2026-01-03 04:14:45 - training - INFO - task_names: None
+2026-01-03 04:14:45 - training - INFO - mtl_group: cofactor
+2026-01-03 04:14:45 - training - INFO - seed: 42
+2026-01-03 04:14:45 - training - INFO - learning_rate: 0.001
+2026-01-03 04:14:45 - training - INFO - scheduler: None
+2026-01-03 04:14:45 - training - INFO - warmup_steps: 0
+2026-01-03 04:14:45 - training - INFO - num_workers: 4
+2026-01-03 04:14:45 - training - INFO - batch_size: 8
+2026-01-03 04:14:45 - training - INFO - batch_token: None
+2026-01-03 04:14:45 - training - INFO - num_epochs: 100
+2026-01-03 04:14:45 - training - INFO - max_seq_len: 512
+2026-01-03 04:14:45 - training - INFO - gradient_accumulation_steps: 1
+2026-01-03 04:14:45 - training - INFO - max_grad_norm: -1
+2026-01-03 04:14:45 - training - INFO - patience: 10
+2026-01-03 04:14:45 - training - INFO - min_delta: 0.0
+2026-01-03 04:14:45 - training - INFO - min_epochs: 0
+2026-01-03 04:14:45 - training - INFO - monitor: None
+2026-01-03 04:14:45 - training - INFO - monitor_strategy: None
+2026-01-03 04:14:45 - training - INFO - loss_type: combined
+2026-01-03 04:14:45 - training - INFO - training_method: mtl-lora
+2026-01-03 04:14:45 - training - INFO - test_only: True
+2026-01-03 04:14:45 - training - INFO - output_model_name: best_model.pt
+2026-01-03 04:14:45 - training - INFO - output_root: ckpt
+2026-01-03 04:14:45 - training - INFO - output_dir: ./results/MTL_esm2_t33_lora_cofactor
+2026-01-03 04:14:45 - training - INFO - wandb: False
+2026-01-03 04:14:45 - training - INFO - wandb_entity: None
+2026-01-03 04:14:45 - training - INFO - wandb_project: VenusFactory
+2026-01-03 04:14:45 - training - INFO - wandb_run_name: None
+2026-01-03 04:14:45 - training - INFO - Random seed set to: 42
+2026-01-03 04:14:45 - training - INFO - ============================================================
+2026-01-03 04:14:45 - training - INFO - Initializing models and tokenizer...
+2026-01-03 04:14:52 - training - INFO - ------------------------
+2026-01-03 04:14:52 - training - INFO - Model Parameters Statistics:
+2026-01-03 04:14:52 - training - INFO - ------------------------
+2026-01-03 04:14:52 - training - INFO - Adapter Model:
+2026-01-03 04:14:52 - training - INFO -   Total parameters:     7.10M
+2026-01-03 04:14:52 - training - INFO -   Trainable parameters: 7.10M
+2026-01-03 04:14:52 - training - INFO - Pre-trained Model:
+2026-01-03 04:14:52 - training - INFO -   Total parameters:     656.80M
+2026-01-03 04:14:52 - training - INFO -   Trainable parameters: 6.08M
+2026-01-03 04:14:52 - training - INFO - Combined:
+2026-01-03 04:14:52 - training - INFO -   Total parameters:     663.89M
+2026-01-03 04:14:52 - training - INFO -   Trainable parameters: 13.18M
+2026-01-03 04:14:52 - training - INFO -   Trainable percentage: 1.99%
+2026-01-03 04:14:52 - training - INFO - ------------------------
+2026-01-03 04:14:52 - training - INFO - ============================================================
+2026-01-03 04:14:52 - training - INFO - Training MTL model for group: cofactor
+2026-01-03 04:14:52 - training - INFO - MTL Groups and Tasks:
+2026-01-03 04:14:52 - training - INFO -   Group cofactor: ['FAD', 'NAD', 'SAH', 'SF4']
+2026-01-03 04:14:52 - training - INFO -   Task FAD (Group cofactor): 153 train, 33 val, 61 test
+2026-01-03 04:14:52 - training - INFO -   Task NAD (Group cofactor): 124 train, 34 val, 45 test
+2026-01-03 04:14:52 - training - INFO -   Task SAH (Group cofactor): 134 train, 35 val, 49 test
+2026-01-03 04:14:52 - training - INFO -   Task SF4 (Group cofactor): 106 train, 28 val, 48 test
+2026-01-03 04:14:52 - training - INFO - MTL Dataset Summary:
+2026-01-03 04:14:52 - training - INFO -   Total train samples: 517
+2026-01-03 04:14:52 - training - INFO -   Total val samples: 130
+2026-01-03 04:14:52 - training - INFO -   Total test samples: 203
+2026-01-03 04:14:52 - training - INFO - ============================================================
+2026-01-03 04:14:52 - training - INFO - Starting Test Phase
+2026-01-03 04:14:52 - training - INFO - ============================================================
+2026-01-03 13:50:23 - training - INFO - Starting training with configuration:
+2026-01-03 13:50:23 - training - INFO - hidden_size: None
+2026-01-03 13:50:23 - training - INFO - num_attention_head: 8
+2026-01-03 13:50:23 - training - INFO - attention_probs_dropout: 0.1
+2026-01-03 13:50:23 - training - INFO - plm_model: ./models/esm2/esm2_t33_650M_UR50D
+2026-01-03 13:50:23 - training - INFO - pooling_method: convbert
+2026-01-03 13:50:23 - training - INFO - pooling_dropout: 0.1
+2026-01-03 13:50:23 - training - INFO - mlp_hidden_dims: [512, 256]
+2026-01-03 13:50:23 - training - INFO - mlp_activation: relu
+2026-01-03 13:50:23 - training - INFO - lstm_hidden_size: 256
+2026-01-03 13:50:23 - training - INFO - lstm_num_layers: 2
+2026-01-03 13:50:23 - training - INFO - lstm_bidirectional: True
+2026-01-03 13:50:23 - training - INFO - bilstm_pooling: mean
+2026-01-03 13:50:23 - training - INFO - num_cnn_layers: 3
+2026-01-03 13:50:23 - training - INFO - kernel_size: 7
+2026-01-03 13:50:23 - training - INFO - nhead: 8
+2026-01-03 13:50:23 - training - INFO - hidden_dim: 512
+2026-01-03 13:50:23 - training - INFO - feature_extractor_path: None
+2026-01-03 13:50:23 - training - INFO - plm_encoder_path: None
+2026-01-03 13:50:23 - training - INFO - num_hidden_layers: 1
+2026-01-03 13:50:23 - training - INFO - dataset: None
+2026-01-03 13:50:23 - training - INFO - dataset_config: None
+2026-01-03 13:50:23 - training - INFO - num_labels: 2
+2026-01-03 13:50:23 - training - INFO - problem_type: single_label_classification
+2026-01-03 13:50:23 - training - INFO - pdb_type: None
+2026-01-03 13:50:23 - training - INFO - train_file: None
+2026-01-03 13:50:23 - training - INFO - valid_file: None
+2026-01-03 13:50:23 - training - INFO - test_file: None
+2026-01-03 13:50:23 - training - INFO - metrics: ['mcc', 'auroc', 'aupr']
+2026-01-03 13:50:23 - training - INFO - data_group_dir: ./dataset/data_group
+2026-01-03 13:50:23 - training - INFO - task_names: None
+2026-01-03 13:50:23 - training - INFO - mtl_group: cofactor
+2026-01-03 13:50:23 - training - INFO - seed: 42
+2026-01-03 13:50:23 - training - INFO - learning_rate: 0.001
+2026-01-03 13:50:23 - training - INFO - scheduler: None
+2026-01-03 13:50:23 - training - INFO - warmup_steps: 0
+2026-01-03 13:50:23 - training - INFO - num_workers: 4
+2026-01-03 13:50:23 - training - INFO - batch_size: 8
+2026-01-03 13:50:23 - training - INFO - batch_token: None
+2026-01-03 13:50:23 - training - INFO - num_epochs: 100
+2026-01-03 13:50:23 - training - INFO - max_seq_len: 512
+2026-01-03 13:50:23 - training - INFO - gradient_accumulation_steps: 1
+2026-01-03 13:50:23 - training - INFO - max_grad_norm: -1
+2026-01-03 13:50:23 - training - INFO - patience: 10
+2026-01-03 13:50:23 - training - INFO - min_delta: 0.0
+2026-01-03 13:50:23 - training - INFO - min_epochs: 0
+2026-01-03 13:50:23 - training - INFO - monitor: None
+2026-01-03 13:50:23 - training - INFO - monitor_strategy: None
+2026-01-03 13:50:23 - training - INFO - loss_type: combined
+2026-01-03 13:50:23 - training - INFO - training_method: mtl-lora
+2026-01-03 13:50:23 - training - INFO - test_only: True
+2026-01-03 13:50:23 - training - INFO - output_model_name: best_model.pt
+2026-01-03 13:50:23 - training - INFO - output_root: ckpt
+2026-01-03 13:50:23 - training - INFO - output_dir: ./results/MTL_esm2_t33_lora_cofactor
+2026-01-03 13:50:23 - training - INFO - wandb: False
+2026-01-03 13:50:23 - training - INFO - wandb_entity: None
+2026-01-03 13:50:23 - training - INFO - wandb_project: VenusFactory
+2026-01-03 13:50:23 - training - INFO - wandb_run_name: None
+2026-01-03 13:50:23 - training - INFO - Random seed set to: 42
+2026-01-03 13:50:23 - training - INFO - ============================================================
+2026-01-03 13:50:23 - training - INFO - Initializing models and tokenizer...
+2026-01-03 13:50:30 - training - INFO - ------------------------
+2026-01-03 13:50:30 - training - INFO - Model Parameters Statistics:
+2026-01-03 13:50:30 - training - INFO - ------------------------
+2026-01-03 13:50:30 - training - INFO - Adapter Model:
+2026-01-03 13:50:30 - training - INFO -   Total parameters:     7.10M
+2026-01-03 13:50:30 - training - INFO -   Trainable parameters: 7.10M
+2026-01-03 13:50:30 - training - INFO - Pre-trained Model:
+2026-01-03 13:50:30 - training - INFO -   Total parameters:     656.80M
+2026-01-03 13:50:30 - training - INFO -   Trainable parameters: 6.08M
+2026-01-03 13:50:30 - training - INFO - Combined:
+2026-01-03 13:50:30 - training - INFO -   Total parameters:     663.89M
+2026-01-03 13:50:30 - training - INFO -   Trainable parameters: 13.18M
+2026-01-03 13:50:30 - training - INFO -   Trainable percentage: 1.99%
+2026-01-03 13:50:30 - training - INFO - ------------------------
+2026-01-03 13:50:30 - training - INFO - ============================================================
+2026-01-03 13:50:30 - training - INFO - Training MTL model for group: cofactor
+2026-01-03 13:50:30 - training - INFO - MTL Groups and Tasks:
+2026-01-03 13:50:30 - training - INFO -   Group cofactor: ['FAD', 'NAD', 'SAH', 'SF4']
+2026-01-03 13:50:30 - training - INFO -   Task FAD (Group cofactor): 153 train, 33 val, 61 test
+2026-01-03 13:50:30 - training - INFO -   Task NAD (Group cofactor): 124 train, 34 val, 45 test
+2026-01-03 13:50:30 - training - INFO -   Task SAH (Group cofactor): 134 train, 35 val, 49 test
+2026-01-03 13:50:30 - training - INFO -   Task SF4 (Group cofactor): 106 train, 28 val, 48 test
+2026-01-03 13:50:30 - training - INFO - MTL Dataset Summary:
+2026-01-03 13:50:30 - training - INFO -   Total train samples: 517
+2026-01-03 13:50:30 - training - INFO -   Total val samples: 130
+2026-01-03 13:50:30 - training - INFO -   Total test samples: 203
+2026-01-03 13:50:30 - training - INFO - ============================================================
+2026-01-03 13:50:30 - training - INFO - Starting Test Phase
+2026-01-03 13:50:30 - training - INFO - ============================================================
+2026-01-03 13:50:42 - training - INFO - Test losses per group:
+2026-01-03 13:50:42 - training - INFO -   Group cofactor: 0.6347 (samples: 203)
+2026-01-03 13:50:42 - training - INFO -     - FAD: 0.8036 (samples: 61)
+2026-01-03 13:50:42 - training - INFO -     - NAD: 0.5345 (samples: 45)
+2026-01-03 13:50:42 - training - INFO -     - SAH: 0.3694 (samples: 49)
+2026-01-03 13:50:42 - training - INFO -     - SF4: 0.7850 (samples: 48)
+2026-01-03 13:50:48 - training - INFO - Per-group test metrics:
+2026-01-03 13:50:48 - training - INFO -   Group cofactor:
+2026-01-03 13:50:48 - training - INFO -     - FAD: mcc: 0.6553, auroc: 0.9510, aupr: 0.7286
+2026-01-03 13:50:48 - training - INFO -     - NAD: mcc: 0.6261, auroc: 0.9645, aupr: 0.6732
+2026-01-03 13:50:48 - training - INFO -     - SAH: mcc: 0.6830, auroc: 0.9685, aupr: 0.7098
+2026-01-03 13:50:48 - training - INFO -     - SF4: mcc: 0.5526, auroc: 0.9286, aupr: 0.6015
+2026-01-03 13:50:48 - training - INFO - ============================================================
+2026-01-03 13:50:48 - training - INFO - Test Results:
+2026-01-03 13:50:48 - training - INFO - Test Loss: 0.6347
+2026-01-03 13:50:48 - training - INFO - Per-group test metrics:
+2026-01-03 13:50:48 - training - INFO -   Group cofactor:
+2026-01-03 13:50:48 - training - INFO -     - FAD: MCC: 0.6553, AUROC: 0.9510, AUPR: 0.7286
+2026-01-03 13:50:48 - training - INFO -     - NAD: MCC: 0.6261, AUROC: 0.9645, AUPR: 0.6732
+2026-01-03 13:50:48 - training - INFO -     - SAH: MCC: 0.6830, AUROC: 0.9685, AUPR: 0.7098
+2026-01-03 13:50:48 - training - INFO -     - SF4: MCC: 0.5526, AUROC: 0.9286, AUPR: 0.6015
+2026-01-03 13:50:48 - training - INFO - ============================================================
+2026-01-03 13:50:48 - training - INFO - Test results saved to: ./results/MTL_esm2_t33_lora_cofactor/test_results.json
+2026-01-03 13:50:53 - training - INFO - Detailed predictions saved to: ./results/MTL_esm2_t33_lora_cofactor/FAD_NAD_SAH_SF4@test.csv
+2026-01-03 13:50:53 - training - INFO - Total sequences predicted: 0
