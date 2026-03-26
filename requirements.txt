@@ -1,0 +1,29 @@
+# Install: python -m pip install -r requirements.txt
+# Note: pick the right PyTorch build for your CPU/CUDA environment.
+torch>=2.0
+
+transformers>=4.30
+
+accelerate>=0.20
+
+peft>=0.4
+
+datasets>=2.10
+
+numpy>=1.21
+pandas>=1.3
+
+tqdm>=4.64
+
+torchmetrics>=0.11
+
+# Optional (used when enabling W&B logging)
+wandb>=0.13
+
+# Common HF deps (listed explicitly for reproducibility)
+safetensors>=0.4
+tokenizers>=0.13
+
+# Optional (k-bit / BitsAndBytesConfig)
+bitsandbytes>=0.41
+
