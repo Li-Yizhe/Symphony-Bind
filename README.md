@@ -6,18 +6,18 @@
 
 #### ![](workflow.jpg)
 
-#### Performance evaluation on 11 representative ligand tasks shows that Symphony-Bind achieves average MCC values of 0.561, 0.629, and 0.324 for the nucleotide, cofactor, and inorganic ion groups, surpassing other state-of-the-art methods.
+#### Performance evaluation on 11 representative ligand tasks shows that Symphony-Bind achieves average MCC values of **0.561**, **0.629**, and **0.324** for the nucleotide, cofactor, and inorganic ion groups, surpassing other state-of-the-art methods.
 
 ## **Dependencies**
 
 * #### Python Version: `3.10`
-* #### Required Packages: See requirements.txt for a complete list of dependencies.
+* #### Required Packages: See [requirements.txt](./requirements.txt) for a complete list of dependencies.
 
 ## **Usage**
 
 * #### Train [train\_esm2\_t33\_MTL\_lora.sh](./scripts/train_esm2_t33_MTL_lora.sh)
 * #### Predict [test\_esm2\_t33\_MTL\_lora.sh](./scripts/test_esm2_t33_MTL_lora.sh)
-* #### The trained model can be found in [results](results/)
+* #### The trained model can be found in [results](./results/)
 
 ## **Citation**
 
