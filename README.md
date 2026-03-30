@@ -6,7 +6,7 @@
 
 #### ![](workflow.jpg)
 
-#### Performance evaluation on 11 representative ligand tasks shows that Symphony-Bind achieves average MCC values of **0.561**, **0.629**, and **0.324** for the nucleotide, cofactor, and inorganic ion groups, surpassing other state-of-the-art methods.
+#### Performance evaluation on 11 representative ligand tasks shows that Symphony-Bind achieves average MCC values of 0.561, 0.629, and 0.324 for the nucleotide, cofactor, and inorganic ion groups, surpassing other state-of-the-art methods.
 
 ## **Dependencies**
 
