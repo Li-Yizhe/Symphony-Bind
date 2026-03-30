@@ -4,13 +4,13 @@
 
 ##### Symphony-Bind is a Grouped Multi-Task Learning （GMTL） framework that leverages LoRA-enhanced ESM2-650M to extract embeddings, which are subsequently refined by a shared ConvBERT module and then processed by small molecule-specific MLPs for precise binding site prediction. The overall workflow of Symphony-Bind is illustrated in the schematic diagram below.
 
-##### !\[](workflow.jpg)
+##### ![](workflow.jpg)
 
 ##### Performance evaluation on 11 representative ligand tasks shows that Symphony-Bind achieves average MCC values of **0.561**, **0.629**, and **0.324** for the nucleotide, cofactor, and inorganic ion groups, surpassing other state-of-the-art methods.
 
 ## **Dependencies**
 
-* ##### Python Version: '3.10'
+* ##### Python Version: `3.10`
 * ##### Required Packages: See requirements.txt for a complete list of dependencies.
 
 ## **Usage**
